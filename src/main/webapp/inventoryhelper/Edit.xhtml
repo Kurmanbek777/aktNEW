@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.EditInventoryhelperTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="#{bundle.EditInventoryhelperLabel_id}" for="id" />
+                    <h:inputText id="id" value="#{inventoryhelperController.selected.id}" title="#{bundle.EditInventoryhelperTitle_id}" required="true" requiredMessage="#{bundle.EditInventoryhelperRequiredMessage_id}"/>
+                    <h:outputLabel value="#{bundle.EditInventoryhelperLabel_inventoryname}" for="inventoryname" />
+                    <h:inputText id="inventoryname" value="#{inventoryhelperController.selected.inventoryname}" title="#{bundle.EditInventoryhelperTitle_inventoryname}" required="true" requiredMessage="#{bundle.EditInventoryhelperRequiredMessage_inventoryname}"/>
+                    <h:outputLabel value="#{bundle.EditInventoryhelperLabel_inventorynumber}" for="inventorynumber" />
+                    <h:inputText id="inventorynumber" value="#{inventoryhelperController.selected.inventorynumber}" title="#{bundle.EditInventoryhelperTitle_inventorynumber}" required="true" requiredMessage="#{bundle.EditInventoryhelperRequiredMessage_inventorynumber}"/>
+                    <h:outputLabel value="#{bundle.EditInventoryhelperLabel_description}" for="description" />
+                    <h:inputText id="description" value="#{inventoryhelperController.selected.description}" title="#{bundle.EditInventoryhelperTitle_description}" required="true" requiredMessage="#{bundle.EditInventoryhelperRequiredMessage_description}"/>
+                    <h:outputLabel value="#{bundle.EditInventoryhelperLabel_createdat}" for="createdat" />
+                    <h:inputText id="createdat" value="#{inventoryhelperController.selected.createdat}" title="#{bundle.EditInventoryhelperTitle_createdat}" required="true" requiredMessage="#{bundle.EditInventoryhelperRequiredMessage_createdat}">
+                        <f:convertDateTime pattern="MM/dd/yyyy HH:mm:ss" />
+                    </h:inputText>
+                    <h:outputLabel value="#{bundle.EditInventoryhelperLabel_updatedat}" for="updatedat" />
+                    <h:inputText id="updatedat" value="#{inventoryhelperController.selected.updatedat}" title="#{bundle.EditInventoryhelperTitle_updatedat}" required="true" requiredMessage="#{bundle.EditInventoryhelperRequiredMessage_updatedat}">
+                        <f:convertDateTime pattern="MM/dd/yyyy HH:mm:ss" />
+                    </h:inputText>
+                    <h:outputLabel value="#{bundle.EditInventoryhelperLabel_userid}" for="userid" />
+                    <h:selectOneMenu id="userid" value="#{inventoryhelperController.selected.userid}" title="#{bundle.EditInventoryhelperTitle_userid}" required="true" requiredMessage="#{bundle.EditInventoryhelperRequiredMessage_userid}">
+                        <f:selectItems value="#{usersController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                </h:panelGrid>
+                <h:commandLink action="#{inventoryhelperController.update}" value="#{bundle.EditInventoryhelperSaveLink}"/>
+                <br />
+                <br />
+                <h:link outcome="View" value="#{bundle.EditInventoryhelperViewLink}"/>
+                <br />
+                <h:commandLink action="#{inventoryhelperController.prepareList}" value="#{bundle.EditInventoryhelperShowAllLink}" immediate="true"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.EditInventoryhelperIndexLink}" />
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

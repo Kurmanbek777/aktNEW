@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.CreateOfficesTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="#{bundle.CreateOfficesLabel_id}" for="id" />
+                    <h:inputText id="id" value="#{officesController.selected.id}" title="#{bundle.CreateOfficesTitle_id}" required="true" requiredMessage="#{bundle.CreateOfficesRequiredMessage_id}"/>
+                    <h:outputLabel value="#{bundle.CreateOfficesLabel_officename}" for="officename" />
+                    <h:inputText id="officename" value="#{officesController.selected.officename}" title="#{bundle.CreateOfficesTitle_officename}" required="true" requiredMessage="#{bundle.CreateOfficesRequiredMessage_officename}"/>
+                    <h:outputLabel value="#{bundle.CreateOfficesLabel_createdat}" for="createdat" />
+                    <h:inputText id="createdat" value="#{officesController.selected.createdat}" title="#{bundle.CreateOfficesTitle_createdat}" required="true" requiredMessage="#{bundle.CreateOfficesRequiredMessage_createdat}">
+                        <f:convertDateTime pattern="yyyy-MM-dd hh:mm:ss" /> 
+                    </h:inputText>
+                    <h:outputLabel value="#{bundle.CreateOfficesLabel_updatedat}" for="updatedat" />
+                    <h:inputText id="updatedat" value="#{officesController.selected.updatedat}" title="#{bundle.CreateOfficesTitle_updatedat}" required="true" requiredMessage="#{bundle.CreateOfficesRequiredMessage_updatedat}">
+                         <f:convertDateTime pattern="yyyy-MM-dd hh:mm:ss" /> 
+                    </h:inputText>
+                    <h:outputLabel value="#{bundle.CreateOfficesLabel_userid}" for="userid" />
+                    <h:selectOneMenu id="userid" value="#{officesController.selected.userid}" title="#{bundle.CreateOfficesTitle_userid}" required="true" requiredMessage="#{bundle.CreateOfficesRequiredMessage_userid}">
+                        <f:selectItems value="#{usersController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                </h:panelGrid>
+                <br />
+                <h:commandLink action="#{officesController.create}" value="#{bundle.CreateOfficesSaveLink}" />
+                <br />
+                <br />
+                <h:commandLink action="#{officesController.prepareList}" value="#{bundle.CreateOfficesShowAllLink}" immediate="true"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.CreateOfficesIndexLink}"/>
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

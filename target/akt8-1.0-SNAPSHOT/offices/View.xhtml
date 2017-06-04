@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.ViewOfficesTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputText value="#{bundle.ViewOfficesLabel_id}"/>
+                    <h:outputText value="#{officesController.selected.id}" title="#{bundle.ViewOfficesTitle_id}"/>
+                    <h:outputText value="#{bundle.ViewOfficesLabel_officename}"/>
+                    <h:outputText value="#{officesController.selected.officename}" title="#{bundle.ViewOfficesTitle_officename}"/>
+                    <h:outputText value="#{bundle.ViewOfficesLabel_createdat}"/>
+                    <h:outputText value="#{officesController.selected.createdat}" title="#{bundle.ViewOfficesTitle_createdat}">
+                        <f:convertDateTime pattern="MM/dd/yyyy HH:mm:ss" />
+                    </h:outputText>
+                    <h:outputText value="#{bundle.ViewOfficesLabel_updatedat}"/>
+                    <h:outputText value="#{officesController.selected.updatedat}" title="#{bundle.ViewOfficesTitle_updatedat}">
+                        <f:convertDateTime pattern="MM/dd/yyyy HH:mm:ss" />
+                    </h:outputText>
+                    <h:outputText value="#{bundle.ViewOfficesLabel_userid}"/>
+                    <h:outputText value="#{officesController.selected.userid.login}" title="#{bundle.ViewOfficesTitle_userid}"/>
+                </h:panelGrid>
+                <br />
+                <h:commandLink action="#{officesController.destroyAndView}" value="#{bundle.ViewOfficesDestroyLink}"/>
+                <br />
+                <br />
+                <h:link outcome="Edit" value="#{bundle.ViewOfficesEditLink}"/>
+                <br />
+                <h:commandLink action="#{officesController.prepareCreate}" value="#{bundle.ViewOfficesCreateLink}" />
+                <br />
+                <h:commandLink action="#{officesController.prepareList}" value="#{bundle.ViewOfficesShowAllLink}"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.ViewOfficesIndexLink}"/>
+
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

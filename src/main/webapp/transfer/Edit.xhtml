@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.EditTransferTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="#{bundle.EditTransferLabel_id}" for="id" />
+                    <h:inputText id="id" value="#{transferController.selected.id}" title="#{bundle.EditTransferTitle_id}" required="true" requiredMessage="#{bundle.EditTransferRequiredMessage_id}"/>
+                    <h:outputLabel value="#{bundle.EditTransferLabel_actnumber}" for="actnumber" />
+                    <h:inputText id="actnumber" value="#{transferController.selected.actnumber}" title="#{bundle.EditTransferTitle_actnumber}" required="true" requiredMessage="#{bundle.EditTransferRequiredMessage_actnumber}"/>
+                    <h:outputLabel value="#{bundle.EditTransferLabel_dateofact}" for="dateofact" />
+                    <h:inputText id="dateofact" value="#{transferController.selected.dateofact}" title="#{bundle.EditTransferTitle_dateofact}" required="true" requiredMessage="#{bundle.EditTransferRequiredMessage_dateofact}">
+                        <f:convertDateTime pattern="MM/dd/yyyy HH:mm:ss" />
+                    </h:inputText>
+                    <h:outputLabel value="#{bundle.EditTransferLabel_inventorycount}" for="inventorycount" />
+                    <h:inputText id="inventorycount" value="#{transferController.selected.inventorycount}" title="#{bundle.EditTransferTitle_inventorycount}" required="true" requiredMessage="#{bundle.EditTransferRequiredMessage_inventorycount}"/>
+                    <h:outputLabel value="#{bundle.EditTransferLabel_createdat}" for="createdat" />
+                    <h:inputText id="createdat" value="#{transferController.selected.createdat}" title="#{bundle.EditTransferTitle_createdat}" required="true" requiredMessage="#{bundle.EditTransferRequiredMessage_createdat}">
+                        <f:convertDateTime pattern="MM/dd/yyyy HH:mm:ss" />
+                    </h:inputText>
+                    <h:outputLabel value="#{bundle.EditTransferLabel_updatedat}" for="updatedat" />
+                    <h:inputText id="updatedat" value="#{transferController.selected.updatedat}" title="#{bundle.EditTransferTitle_updatedat}" required="true" requiredMessage="#{bundle.EditTransferRequiredMessage_updatedat}">
+                        <f:convertDateTime pattern="MM/dd/yyyy HH:mm:ss" />
+                    </h:inputText>
+                    <h:outputLabel value="#{bundle.EditTransferLabel_empfrom}" for="empfrom" />
+                    <h:selectOneMenu id="empfrom" value="#{transferController.selected.empfrom}" title="#{bundle.EditTransferTitle_empfrom}" required="true" requiredMessage="#{bundle.EditTransferRequiredMessage_empfrom}">
+                        <f:selectItems value="#{employeesController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                    <h:outputLabel value="#{bundle.EditTransferLabel_empto}" for="empto" />
+                    <h:selectOneMenu id="empto" value="#{transferController.selected.empto}" title="#{bundle.EditTransferTitle_empto}" required="true" requiredMessage="#{bundle.EditTransferRequiredMessage_empto}">
+                        <f:selectItems value="#{employeesController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                    <h:outputLabel value="#{bundle.EditTransferLabel_inventoryid}" for="inventoryid" />
+                    <h:selectOneMenu id="inventoryid" value="#{transferController.selected.inventoryid}" title="#{bundle.EditTransferTitle_inventoryid}" required="true" requiredMessage="#{bundle.EditTransferRequiredMessage_inventoryid}">
+                        <f:selectItems value="#{inventoryhelperController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                    <h:outputLabel value="#{bundle.EditTransferLabel_userid}" for="userid" />
+                    <h:selectOneMenu id="userid" value="#{transferController.selected.userid}" title="#{bundle.EditTransferTitle_userid}" required="true" requiredMessage="#{bundle.EditTransferRequiredMessage_userid}">
+                        <f:selectItems value="#{usersController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                </h:panelGrid>
+                <h:commandLink action="#{transferController.update}" value="#{bundle.EditTransferSaveLink}"/>
+                <br />
+                <br />
+                <h:link outcome="View" value="#{bundle.EditTransferViewLink}"/>
+                <br />
+                <h:commandLink action="#{transferController.prepareList}" value="#{bundle.EditTransferShowAllLink}" immediate="true"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.EditTransferIndexLink}" />
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>
