@@ -22,6 +22,8 @@ import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.validation.constraints.NotNull;
 import javax.xml.bind.annotation.XmlRootElement;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 /**
  *
@@ -114,14 +116,18 @@ public class Transfer implements Serializable {
         this.actnumber = actnumber;
     }
 
-    public Date getDateofact() {
+   public Date getDateofact() {
         Date dateofact= new Date();
+     
+         
         return dateofact;
-    }
+   }
 
-    public void setDateofact(Date dateofact) {
+
+  
+   public void setDateofact(Date dateofact) {
         this.dateofact = dateofact;
-    }
+   }
 
     public int getInventorycount() {
         return inventorycount;
@@ -142,10 +148,11 @@ public class Transfer implements Serializable {
 
     public Date getUpdatedat() {
         Date updatedat= new Date();
-        return updatedat;
+    
+       return updatedat;
     }
 
-    public void setUpdatedat(Date updatedat) {
+   public void setUpdatedat(Date updatedat) {
         this.updatedat = updatedat;
     }
 
