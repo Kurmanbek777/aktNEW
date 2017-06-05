@@ -4,9 +4,9 @@ root {
 
 body {
     font-family: Arial, Helvetica, sans-serif;
-    color: #3a4f54;
-    background-color: #dfecf1;
-    font-size: small;
+    color: #431eff;
+    background-color: #48D1CC;
+    font-size: large;
 }
 
 a {
@@ -15,19 +15,23 @@ a {
 
 table {
     empty-cells: show;
+    border: 5px double #399;
+    background-color: #d4d6b2;
+    
+   
 }
 
 form.jsfcrud_list_form th, td th {
-    font-size: x-small;
-    color: #4e6a71;
-    border-top-style: solid;
-    border-bottom-style: solid;
-    border-left-style: solid;
-    border-right-style: solid;
-    border-top-width: 1px;
-    border-bottom-width: 1px;
-    border-left-width: 1px;
-    border-right-width: 1px;
+    font-size: medium;
+    color: #714f4e;
+    border-top-style: groove;
+    border-bottom-style: groove;
+    border-left-style: groove;
+    border-right-style: groove;
+    border-top-width: 2px;
+    border-bottom-width: 2px;
+    border-left-width: 2px;
+    border-right-width: 2px;
     border-top-color: #b2d5d6;
     border-bottom-color: #b2d5d6;
     border-left-color: #90b4bd;
@@ -44,18 +48,20 @@ form.jsfcrud_list_form th, td th {
 td {
     vertical-align: top;
     padding-bottom: 8px;
-    font-size: small;
+    font-size: medium;
+    
+    
 }
 
 form.jsfcrud_list_form td, td td {
-    border-top-style: solid;
-    border-bottom-style: solid;
-    border-left-style: solid;
-    border-right-style: solid;
-    border-top-width: 1px;
-    border-bottom-width: 1px;
-    border-left-width: 1px;
-    border-right-width: 1px;
+    border-top-style: groove;
+    border-bottom-style: groove;
+    border-left-style: groove;
+    border-right-style: groove;
+    border-top-width: 2px;
+    border-bottom-width: 2px;
+    border-left-width: 2px;
+    border-right-width: 2px;
     border-top-color: #b2d5d6;
     border-bottom-color: #b2d5d6;
     border-left-color: #b2d5d6;
@@ -65,13 +71,13 @@ form.jsfcrud_list_form td, td td {
 }
 
 tr.jsfcrud_odd_row {
-    background-color: #fefeff;
+    background-color: #fefffe !important;
     color: #4e6a71;
 }
 
 
 tr.jsfcrud_even_row {
-    background-color: #eff5fa;
+    background-color: #eff5fa !important;
     color: #4e6a71;
 }
 
@@ -80,3 +86,37 @@ tr.jsfcrud_even_row {
     left: 50%;
     top: 50%;
 }
+
+.LinkStyle {
+    
+    display: none;
+}
+
+.myClass{
+
+color:black !important;
+
+background:yellowgreen !important;
+font-size: 25px;
+ cursor:pointer;
+    display:block;
+    height:60px;
+    width:360px;
+    line-height:70px;
+    text-align:center;
+
+
+}
+
+input.homeButton{
+   color:black !important;
+    background:red !important;
+   font-size: 30px;
+ cursor:pointer;
+    display:block;
+    height:60px;
+    width:350px;
+    line-height:70px;
+    text-align:center;
+}
+

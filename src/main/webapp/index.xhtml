@@ -12,9 +12,10 @@
         <h:outputStylesheet name="bootstrap/css/bootstrap.css"/>
     </h:head>
     <h:body>
-        Программа для акта передачи оборудования
+          <h2  align="centr"><font face="arial" size="+19" color="blue"> Программа для акта передачи оборудования </font> </h2>   
+        
         <br />
-        <h:link outcome="/departments/List" value="Интерфейс Отделов"/>
+       <!-- <h:link outcome="/departments/List" value="Интерфейс Отделов"/>
         <br />
         <h:link outcome="/employees/List" value="Интерфейс сотрудников"/>
         <br />
@@ -24,7 +25,50 @@
         <br />
         <h:link outcome="/transfer/List" value="Интерфейс перемещении"/>
         <br />
-        <h:link outcome="/users/List" value="Интерфейс пользователей"/>
+        <h:link outcome="/users/List" value="Интерфейс пользователей"/> -->
+         <form>
+	<input type="button" value="Интерфейс Отделов" onclick="javascript:window.location='http://localhost:2822/akt8/faces/departments/List.xhtml'" style="width:75%;height:75px;font-size:30px"/>
+        <br />
+        <br />
+        <br />
+        <br />
+        
+        
+	<input type="button" value="Интерфейс сотрудников" onclick="javascript:window.location='http://localhost:2822/akt8/faces/employees/List.xhtml'" style="width:75%;height:75px;font-size:30px"/>
+        <br />
+        <br />
+        <br />
+        <br />
+       
+        
+        <input type="button" value="Интерфейс инвенторя" onclick="javascript:window.location='http://localhost:2822/akt8/faces/inventoryhelper/List.xhtml'" style="width:75%;height:75px;font-size:30px"/>
+        <br />
+        <br />
+        <br />
+        <br />
+        
+        
+        <input type="button" value="Интерфейс офисов" onclick="javascript:window.location='http://localhost:2822/akt8/faces/offices/List.xhtml'" style="width:75%;height:75px;font-size:30px"/>
+        <br />
+        <br />
+        <br />
+        <br />
+        
+        
+        <input type="button" value="Интерфейс перемещении" onclick="javascript:window.location='http://localhost:2822/akt8/faces/transfer/List.xhtml'" style="width:75%;height:75px;font-size:30px"/>
+        <br />
+        <br />
+        <br />
+        <br />
+        
+         <input type="button" value="Интерфейс пользователей" onclick="javascript:window.location='http://localhost:2822/akt8/faces/users/List.xhtml'" style="width:75%;height:75px;font-size:30px"/>
+        <br />
+        <br />
+        <br />
+        <br />
+        
+        </form>
+        
     </h:body>
 
  

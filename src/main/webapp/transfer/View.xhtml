@@ -7,7 +7,7 @@
 
     <ui:composition template="/template.xhtml">
         <ui:define name="title">
-          <h:outputText value="Акт приема передачи оборудования№"  ></h:outputText>
+             <h:outputText value="Акт приема передачи оборудования№"  ></h:outputText>
           <h:outputText value="#{transferController.selected.actnumber}" title="#{bundle.ViewTransferTitle_actnumber}"/>
         </ui:define>
         <ui:define name="body">
@@ -16,7 +16,13 @@
             </h:panelGroup>
             
             <!-- Latest compiled and minified CSS -->
+<style media='print' type='text/css'>
+#navbar-iframe {display: none; height: 0px; visibility: hidden;}
+.noprint {display: none;}
+body {background:#FFF; color:#000;}
+a {text-decoration: underline; color:#00F;}
 
+</style>
             <h:form>
               <!--   <h:panelGrid columns="2" columnClasses="rightAlign, leftAlign">
                     <h:outputText value="    "/>  <h:outputText value="  " title="   "/>
@@ -59,8 +65,8 @@
                 <table class="table table-striped"> 
                     <thead> 
                         <tr> 
-                            <th class="col-md-6">#</th>
-                           <th class="col-md-6">First Name</th>
+                            <th class="col-md-6"> </th>
+                           <th class="col-md-6"> </th>
                         </tr> 
                     </thead> 
                     <tbody> 
@@ -116,7 +122,14 @@
                         </tr>
                         </tbody>
                 </table>
+              <span class="noprint">  
+              <br />
+                <a href='javascript:window.print(); void 0;'> <img src="http://icons.iconarchive.com/icons/avosoft/warm-toolbar/256/print-icon.png" /> </a>
+                  <br />
                 <br />
+                  <br />
+                <br />
+                
                 <h:commandLink action="#{transferController.destroyAndView}" value="#{bundle.ViewTransferDestroyLink}"/>
                 <br />
                 <br />
@@ -128,7 +141,7 @@
                 <br />
                 <br />
                 <h:link outcome="/index" value="#{bundle.ViewTransferIndexLink}"/>
-
+               </span>
             </h:form>
         </ui:define>
     </ui:composition>
