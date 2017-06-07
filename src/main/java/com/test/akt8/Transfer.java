@@ -85,9 +85,12 @@ public class Transfer implements Serializable {
     private Users userid;
 
     public Transfer() {
+        updatedat= new Date();
+        dateofact= new Date();
     }
 
     public Transfer(Integer id) {
+        
         this.id = id;
     }
 
@@ -117,7 +120,7 @@ public class Transfer implements Serializable {
     }
 
    public Date getDateofact() {
-        Date dateofact= new Date();
+       
      
          
         return dateofact;
@@ -138,7 +141,7 @@ public class Transfer implements Serializable {
     }
 
     public Date getCreatedat() {
-        Date createdat= new Date();
+       
         return createdat;
     }
 
@@ -147,7 +150,7 @@ public class Transfer implements Serializable {
     }
 
     public Date getUpdatedat() {
-        Date updatedat= new Date();
+       
     
        return updatedat;
     }

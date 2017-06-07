@@ -74,6 +74,7 @@ public class Offices implements Serializable {
     private Collection<Departments> departmentsCollection;
 
     public Offices() {
+        updatedat= new Date();
     }
 
     public Offices(Integer id) {

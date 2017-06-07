@@ -83,6 +83,7 @@ public class Inventoryhelper implements Serializable {
     private Users userid;
 
     public Inventoryhelper() {
+        updatedat= new Date();
     }
 
     public Inventoryhelper(Integer id) {

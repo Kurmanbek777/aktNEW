@@ -87,6 +87,7 @@ public class Employees implements Serializable {
     private Users userid;
 
     public Employees() {
+        updatedat= new Date();
     }
 
     public Employees(Integer id) {
