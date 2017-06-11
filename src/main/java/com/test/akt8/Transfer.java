@@ -87,6 +87,7 @@ public class Transfer implements Serializable {
     public Transfer() {
         updatedat= new Date();
         dateofact= new Date();
+        createdat= new Date();
     }
 
     public Transfer(Integer id) {
