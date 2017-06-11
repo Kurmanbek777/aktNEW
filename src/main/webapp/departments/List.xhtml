@@ -19,7 +19,7 @@
                     <h:outputText value="#{departmentsController.pagination.pageFirstItem + 1}..#{departmentsController.pagination.pageLastItem + 1}/#{departmentsController.pagination.itemsCount}"/>&nbsp;
                     <h:commandLink action="#{departmentsController.previous}" value="#{bundle.Previous} #{departmentsController.pagination.pageSize}" rendered="#{departmentsController.pagination.hasPreviousPage}"/>&nbsp;
                     <h:commandLink action="#{departmentsController.next}" value="#{bundle.Next} #{departmentsController.pagination.pageSize}" rendered="#{departmentsController.pagination.hasNextPage}"/>&nbsp;
-                    <h:dataTable value="#{departmentsController.items}" var="item" border="0" cellpadding="2" cellspacing="0" rowClasses="jsfcrud_odd_row,jsfcrud_even_row" rules="all" style="border:solid 1px">
+                    <h:dataTable value="#{departmentsController.items}" class="table table-bordered" var="item" border="0" cellpadding="2" cellspacing="0" rowClasses="jsfcrud_odd_row,jsfcrud_even_row" rules="all" style="border:solid 1px">
                         <h:column>
                             <f:facet name="header">
                                 <h:outputText value="#{bundle.ListDepartmentsTitle_id}"/>

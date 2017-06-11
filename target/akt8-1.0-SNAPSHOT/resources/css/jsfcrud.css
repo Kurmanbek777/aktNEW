@@ -15,7 +15,7 @@ a {
 
 table {
     empty-cells: show;
-    border: 5px double #399;
+    border: 5px double #1E90FF;
     background-color: #d4d6b2;
     
    
@@ -42,7 +42,7 @@ form.jsfcrud_list_form th, td th {
     padding-bottom: 6px;
     padding-left: 6px;
     padding-right: 6px;
-    background-color: #b2d5d6;
+    background-color: #1E90FF;
 }
 
 td {
@@ -62,10 +62,10 @@ form.jsfcrud_list_form td, td td {
     border-bottom-width: 2px;
     border-left-width: 2px;
     border-right-width: 2px;
-    border-top-color: #b2d5d6;
-    border-bottom-color: #b2d5d6;
-    border-left-color: #b2d5d6;
-    border-right-color: #b2d5d6;
+    border-top-color: #1E90FF;
+    border-bottom-color: #1E90FF;
+    border-left-color: #1E90FF;
+    border-right-color: #1E90FF;
     vertical-align: baseline;
     padding-bottom: 0px;
 }
