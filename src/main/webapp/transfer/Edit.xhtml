@@ -14,7 +14,7 @@
                 <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
             </h:panelGroup>
             <h:form>
-                <h:panelGrid columns="2">
+                <h:panelGrid class="table table-bordered" columns="2">
                     <h:outputLabel value="#{bundle.EditTransferLabel_id}" for="id" />
                     <h:inputText id="id" value="#{transferController.selected.id}" title="#{bundle.EditTransferTitle_id}" required="true" requiredMessage="#{bundle.EditTransferRequiredMessage_id}"/>
                     <h:outputLabel value="#{bundle.EditTransferLabel_actnumber}" for="actnumber" />

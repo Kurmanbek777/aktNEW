@@ -14,7 +14,7 @@
                 <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
             </h:panelGroup>
             <h:form>
-                <h:panelGrid columns="2">
+                <h:panelGrid class="table table-bordered" columns="2">
                     <h:outputLabel value="#{bundle.EditInventoryhelperLabel_id}" for="id" />
                     <h:inputText id="id" value="#{inventoryhelperController.selected.id}" title="#{bundle.EditInventoryhelperTitle_id}" required="true" requiredMessage="#{bundle.EditInventoryhelperRequiredMessage_id}"/>
                     <h:outputLabel value="#{bundle.EditInventoryhelperLabel_inventoryname}" for="inventoryname" />
