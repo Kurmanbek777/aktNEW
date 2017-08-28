@@ -7,6 +7,8 @@ package com.test.akt8;
 
 import java.io.Serializable;
 import java.util.Collection;
+import javax.faces.application.FacesMessage;
+import javax.faces.context.FacesContext;
 import javax.persistence.Basic;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
@@ -18,6 +20,7 @@ import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import javax.servlet.http.HttpSession;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import javax.xml.bind.annotation.XmlRootElement;
@@ -170,5 +173,9 @@ public class Users implements Serializable {
     public String toString() {
         return  login;
     }
+   
+
+
+	
     
 }

@@ -20,12 +20,12 @@
                     <h:commandLink action="#{employeesController.previous}" value="#{bundle.Previous} #{employeesController.pagination.pageSize}" rendered="#{employeesController.pagination.hasPreviousPage}"/>&nbsp;
                     <h:commandLink action="#{employeesController.next}" value="#{bundle.Next} #{employeesController.pagination.pageSize}" rendered="#{employeesController.pagination.hasNextPage}"/>&nbsp;
                     <h:dataTable value="#{employeesController.items}" class="table table-bordered" var="item" border="0" cellpadding="2" cellspacing="0" rowClasses="jsfcrud_odd_row,jsfcrud_even_row" rules="all" style="border:solid 1px">
-                        <h:column>
+                       <!-- <h:column>
                             <f:facet name="header">
                                 <h:outputText value="#{bundle.ListEmployeesTitle_id}"/>
                             </f:facet>
                             <h:outputText value="#{item.id}"/>
-                        </h:column>
+                        </h:column> -->
                         <h:column>
                             <f:facet name="header">
                                 <h:outputText value="#{bundle.ListEmployeesTitle_firstname}"/>

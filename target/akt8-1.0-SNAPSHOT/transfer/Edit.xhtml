@@ -15,8 +15,6 @@
             </h:panelGroup>
             <h:form>
                 <h:panelGrid class="table table-bordered" columns="2">
-                    <h:outputLabel value="#{bundle.EditTransferLabel_id}" for="id" />
-                    <h:inputText id="id" value="#{transferController.selected.id}" title="#{bundle.EditTransferTitle_id}" required="true" requiredMessage="#{bundle.EditTransferRequiredMessage_id}"/>
                     <h:outputLabel value="#{bundle.EditTransferLabel_actnumber}" for="actnumber" />
                     <h:inputText id="actnumber" value="#{transferController.selected.actnumber}" title="#{bundle.EditTransferTitle_actnumber}" required="true" requiredMessage="#{bundle.EditTransferRequiredMessage_actnumber}"/>
                     <h:outputLabel value="#{bundle.EditTransferLabel_dateofact}" for="dateofact" />

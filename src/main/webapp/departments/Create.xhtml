@@ -15,18 +15,9 @@
             </h:panelGroup>
             <h:form>
                 <h:panelGrid columns="2">
-                    <h:outputLabel value="#{bundle.CreateDepartmentsLabel_id}" for="id" />
-                    <h:inputText id="id" value="#{departmentsController.selected.id}" title="#{bundle.CreateDepartmentsTitle_id}" required="true" requiredMessage="#{bundle.CreateDepartmentsRequiredMessage_id}"/>
+                    
                     <h:outputLabel value="#{bundle.CreateDepartmentsLabel_departmentname}" for="departmentname" />
                     <h:inputText id="departmentname" value="#{departmentsController.selected.departmentname}" title="#{bundle.CreateDepartmentsTitle_departmentname}" required="true" requiredMessage="#{bundle.CreateDepartmentsRequiredMessage_departmentname}"/>
-                    <h:outputLabel value="#{bundle.CreateDepartmentsLabel_createdat}" for="createdat" />
-                    <h:inputText id="createdat" value="#{departmentsController.selected.createdat}" title="#{bundle.CreateDepartmentsTitle_createdat}" required="true" requiredMessage="#{bundle.CreateDepartmentsRequiredMessage_createdat}">
-                        <f:convertDateTime pattern="MM/dd/yyyy HH:mm:ss" />
-                    </h:inputText>
-                    <h:outputLabel value="#{bundle.CreateDepartmentsLabel_updatedat}" for="updatedat" />
-                    <h:inputText id="updatedat" value="#{departmentsController.selected.updatedat}" title="#{bundle.CreateDepartmentsTitle_updatedat}" required="true" requiredMessage="#{bundle.CreateDepartmentsRequiredMessage_updatedat}">
-                        <f:convertDateTime pattern="MM/dd/yyyy HH:mm:ss" />
-                    </h:inputText>
                     <h:outputLabel value="#{bundle.CreateDepartmentsLabel_officeid}" for="officeid" />
                     <h:selectOneMenu id="officeid" value="#{departmentsController.selected.officeid}" title="#{bundle.CreateDepartmentsTitle_officeid}" required="true" requiredMessage="#{bundle.CreateDepartmentsRequiredMessage_officeid}">
                         <f:selectItems value="#{officesController.itemsAvailableSelectOne}"/>

@@ -15,18 +15,8 @@
             </h:panelGroup>
             <h:form>
                 <h:panelGrid columns="2">
-                    <h:outputLabel value="#{bundle.CreateOfficesLabel_id}" for="id" />
-                    <h:inputText id="id" value="#{officesController.selected.id}" title="#{bundle.CreateOfficesTitle_id}" required="true" requiredMessage="#{bundle.CreateOfficesRequiredMessage_id}"/>
                     <h:outputLabel value="#{bundle.CreateOfficesLabel_officename}" for="officename" />
                     <h:inputText id="officename" value="#{officesController.selected.officename}" title="#{bundle.CreateOfficesTitle_officename}" required="true" requiredMessage="#{bundle.CreateOfficesRequiredMessage_officename}"/>
-                    <h:outputLabel value="#{bundle.CreateOfficesLabel_createdat}" for="createdat" />
-                    <h:inputText id="createdat" value="#{officesController.selected.createdat}" title="#{bundle.CreateOfficesTitle_createdat}" required="true" requiredMessage="#{bundle.CreateOfficesRequiredMessage_createdat}">
-                        <f:convertDateTime pattern="yyyy-MM-dd hh:mm:ss" /> 
-                    </h:inputText>
-                    <h:outputLabel value="#{bundle.CreateOfficesLabel_updatedat}" for="updatedat" />
-                    <h:inputText id="updatedat" value="#{officesController.selected.updatedat}" title="#{bundle.CreateOfficesTitle_updatedat}" required="true" requiredMessage="#{bundle.CreateOfficesRequiredMessage_updatedat}">
-                         <f:convertDateTime pattern="yyyy-MM-dd hh:mm:ss" /> 
-                    </h:inputText>
                     <h:outputLabel value="#{bundle.CreateOfficesLabel_userid}" for="userid" />
                     <h:selectOneMenu id="userid" value="#{officesController.selected.userid}" title="#{bundle.CreateOfficesTitle_userid}" required="true" requiredMessage="#{bundle.CreateOfficesRequiredMessage_userid}">
                         <f:selectItems value="#{usersController.itemsAvailableSelectOne}"/>

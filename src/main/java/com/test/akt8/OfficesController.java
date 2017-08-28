@@ -80,6 +80,8 @@ public class OfficesController implements Serializable {
 
     public String create() {
         try {
+            current.setCreatedat(new Date());
+            current.setUpdatedat(new Date());
             //current.setCreatedat(new String());
             getFacade().create(current);
             JsfUtil.addSuccessMessage(ResourceBundle.getBundle("/Bundle").getString("OfficesCreated"));
@@ -98,6 +100,7 @@ public class OfficesController implements Serializable {
 
     public String update() {
         try {
+            current.setUpdatedat(new Date());
             getFacade().edit(current);
             JsfUtil.addSuccessMessage(ResourceBundle.getBundle("/Bundle").getString("OfficesUpdated"));
             return "View";

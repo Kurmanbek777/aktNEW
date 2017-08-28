@@ -15,22 +15,14 @@
             </h:panelGroup>
             <h:form>
                 <h:panelGrid columns="2">
-                    <h:outputLabel value="#{bundle.CreateEmployeesLabel_id}" for="id" />
-                    <h:inputText id="id" value="#{employeesController.selected.id}" title="#{bundle.CreateEmployeesTitle_id}" required="true" requiredMessage="#{bundle.CreateEmployeesRequiredMessage_id}"/>
+                    
                     <h:outputLabel value="#{bundle.CreateEmployeesLabel_firstname}" for="firstname" />
                     <h:inputText id="firstname" value="#{employeesController.selected.firstname}" title="#{bundle.CreateEmployeesTitle_firstname}" required="true" requiredMessage="#{bundle.CreateEmployeesRequiredMessage_firstname}"/>
                     <h:outputLabel value="#{bundle.CreateEmployeesLabel_lastname}" for="lastname" />
                     <h:inputText id="lastname" value="#{employeesController.selected.lastname}" title="#{bundle.CreateEmployeesTitle_lastname}" required="true" requiredMessage="#{bundle.CreateEmployeesRequiredMessage_lastname}"/>
                     <h:outputLabel value="#{bundle.CreateEmployeesLabel_enabled}" for="enabled" />
                     <h:inputText id="enabled" value="#{employeesController.selected.enabled}" title="#{bundle.CreateEmployeesTitle_enabled}" required="true" requiredMessage="#{bundle.CreateEmployeesRequiredMessage_enabled}"/>
-                    <h:outputLabel value="#{bundle.CreateEmployeesLabel_createdat}" for="createdat" />
-                    <h:inputText id="createdat" value="#{employeesController.selected.createdat}" title="#{bundle.CreateEmployeesTitle_createdat}" required="true" requiredMessage="#{bundle.CreateEmployeesRequiredMessage_createdat}">
-                        <f:convertDateTime pattern="MM/dd/yyyy HH:mm:ss" />
-                    </h:inputText>
-                    <h:outputLabel value="#{bundle.CreateEmployeesLabel_updatedat}" for="updatedat" />
-                    <h:inputText id="updatedat" value="#{employeesController.selected.updatedat}" title="#{bundle.CreateEmployeesTitle_updatedat}" required="true" requiredMessage="#{bundle.CreateEmployeesRequiredMessage_updatedat}">
-                        <f:convertDateTime pattern="MM/dd/yyyy HH:mm:ss" />
-                    </h:inputText>
+                    
                     <h:outputLabel value="#{bundle.CreateEmployeesLabel_departmentid}" for="departmentid" />
                     <h:selectOneMenu id="departmentid" value="#{employeesController.selected.departmentid}" title="#{bundle.CreateEmployeesTitle_departmentid}" required="true" requiredMessage="#{bundle.CreateEmployeesRequiredMessage_departmentid}">
                         <f:selectItems value="#{departmentsController.itemsAvailableSelectOne}"/>

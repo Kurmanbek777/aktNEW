@@ -13,26 +13,16 @@
             <h:panelGroup id="messagePanel" layout="block">
                 <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
             </h:panelGroup>
-            <h:form>
+            <h:form styleClass="jsfcrud_list_form">
                 <h:panelGrid columns="2">
-                    <h:outputLabel value="#{bundle.CreateTransferLabel_id}" for="id" />
-                    <h:inputText id="id" value="#{transferController.selected.id}" title="#{bundle.CreateTransferTitle_id}" required="true" requiredMessage="#{bundle.CreateTransferRequiredMessage_id}"/>
                     <h:outputLabel value="#{bundle.CreateTransferLabel_actnumber}" for="actnumber" />
-                    <h:inputText id="actnumber" value="#{transferController.selected.actnumber}" title="#{bundle.CreateTransferTitle_actnumber}" required="true" requiredMessage="#{bundle.CreateTransferRequiredMessage_actnumber}"/>
+                    <h:inputText id="actnumber" value="#{transferController.selected.actnumber}" title="#{bundle.CreateTransferTitle_actnumber}" required="true" requiredMessage="#{bundle.CreateTransferRequiredMessage_actnumber}"/> 
                      <h:outputLabel value="#{bundle.CreateTransferLabel_dateofact}" for="dateofact" />
                    <h:inputText id="dateofact" value="#{transferController.selected.dateofact}" title="#{bundle.CreateTransferTitle_dateofact}" required="true" requiredMessage="#{bundle.CreateTransferRequiredMessage_dateofact}">
                         <f:convertDateTime pattern="MM/dd/yyyy HH:mm:ss" />
                     </h:inputText> 
                     <h:outputLabel value="#{bundle.CreateTransferLabel_inventorycount}" for="inventorycount" />
                     <h:inputText id="inventorycount" value="#{transferController.selected.inventorycount}" title="#{bundle.CreateTransferTitle_inventorycount}" required="true" requiredMessage="#{bundle.CreateTransferRequiredMessage_inventorycount}"/>
-                    <h:outputLabel value="#{bundle.CreateTransferLabel_createdat}" for="createdat" />
-                    <h:inputText id="createdat" value="#{transferController.selected.createdat}" title="#{bundle.CreateTransferTitle_createdat}" required="true" requiredMessage="#{bundle.CreateTransferRequiredMessage_createdat}">
-                        <f:convertDateTime pattern="MM/dd/yyyy HH:mm:ss" />
-                    </h:inputText> 
-                    <h:outputLabel value="#{bundle.CreateTransferLabel_updatedat}" for="updatedat" />
-                    <h:inputText id="updatedat" value="#{transferController.selected.updatedat}" title="#{bundle.CreateTransferTitle_updatedat}" required="true" requiredMessage="#{bundle.CreateTransferRequiredMessage_updatedat}">
-                        <f:convertDateTime pattern="MM/dd/yyyy HH:mm:ss" />
-                    </h:inputText> 
                     <h:outputLabel value="#{bundle.CreateTransferLabel_empfrom}" for="empfrom" />
                     <h:selectOneMenu id="empfrom" value="#{transferController.selected.empfrom}" title="#{bundle.CreateTransferTitle_empfrom}" required="true" requiredMessage="#{bundle.CreateTransferRequiredMessage_empfrom}">
                         <f:selectItems value="#{employeesController.itemsAvailableSelectOne}"/>

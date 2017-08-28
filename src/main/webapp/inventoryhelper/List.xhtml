@@ -20,12 +20,12 @@
                     <h:commandLink action="#{inventoryhelperController.previous}" value="#{bundle.Previous} #{inventoryhelperController.pagination.pageSize}" rendered="#{inventoryhelperController.pagination.hasPreviousPage}"/>&nbsp;
                     <h:commandLink action="#{inventoryhelperController.next}" value="#{bundle.Next} #{inventoryhelperController.pagination.pageSize}" rendered="#{inventoryhelperController.pagination.hasNextPage}"/>&nbsp;
                     <h:dataTable value="#{inventoryhelperController.items}" class="table table-bordered" var="item" border="0" cellpadding="2" cellspacing="0" rowClasses="jsfcrud_odd_row,jsfcrud_even_row" rules="all" style="border:solid 1px">
-                        <h:column>
+                        <!--<h:column>
                             <f:facet name="header">
                                 <h:outputText value="#{bundle.ListInventoryhelperTitle_id}"/>
                             </f:facet>
                             <h:outputText value="#{item.id}"/>
-                        </h:column>
+                        </h:column> -->
                         <h:column>
                             <f:facet name="header">
                                 <h:outputText value="#{bundle.ListInventoryhelperTitle_inventoryname}"/>

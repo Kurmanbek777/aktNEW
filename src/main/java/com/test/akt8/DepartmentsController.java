@@ -4,6 +4,7 @@ import com.test.akt8.util.JsfUtil;
 import com.test.akt8.util.PaginationHelper;
 
 import java.io.Serializable;
+import java.util.Date;
 import java.util.ResourceBundle;
 import javax.ejb.EJB;
 import javax.inject.Named;
@@ -79,6 +80,8 @@ public class DepartmentsController implements Serializable {
 
     public String create() {
         try {
+            current.setCreatedat(new Date());
+            current.setUpdatedat(new Date());
             getFacade().create(current);
             JsfUtil.addSuccessMessage(ResourceBundle.getBundle("/Bundle").getString("DepartmentsCreated"));
             return prepareCreate();
@@ -96,6 +99,7 @@ public class DepartmentsController implements Serializable {
 
     public String update() {
         try {
+            current.setUpdatedat(new Date());
             getFacade().edit(current);
             JsfUtil.addSuccessMessage(ResourceBundle.getBundle("/Bundle").getString("DepartmentsUpdated"));
             return "View";
