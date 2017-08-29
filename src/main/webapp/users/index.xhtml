@@ -32,7 +32,7 @@
                             <p:password  value="#{authBean.password}"  /> 
 
                             <p:commandButton value="Войти"  actionListener="#{authBean.search()}" update="growl"/>
-                            
+                            <p:commandButton value="Просмотреть результаты" actionListener="#{authBean.redirectToRating()}"/>
                         </h:panelGrid>
                     </p:panel>
                 </h:form> 

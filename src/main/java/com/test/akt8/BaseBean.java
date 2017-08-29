@@ -18,7 +18,7 @@ import org.primefaces.event.RowEditEvent;
  * @author kbakytbekov
  */
 public abstract class BaseBean implements Serializable{
-    @PersistenceContext(unitName = "com.test_akt8_war_1.0PU")
+  //  @PersistenceContext(unitName = "com.test_akt8_war_1.0PU")
     private EntityManager em;
     
     @Resource
