@@ -44,7 +44,7 @@ public class AuthBean extends BaseBean {
             context.addMessage(null, new FacesMessage("Внимание", "Поле пароль не может быть пустым"));
         } else {
             try {
-                Users user = (Users) getEntityManager().createNamedQuery("Users.findByUserLoginAndPassword")
+                Users user = (Users) getEntityManager().createNamedQuery("Users.findByUsersLoginAndPassword")
                         .setParameter("login", username)
                         .setParameter("password", password)
                         .getSingleResult();
