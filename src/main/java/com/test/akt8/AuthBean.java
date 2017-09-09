@@ -13,18 +13,24 @@ import javax.enterprise.context.SessionScoped;
 import javax.faces.application.FacesMessage;
 import javax.faces.context.FacesContext;
 import javax.inject.Named;
+import javax.persistence.Entity;
+import javax.persistence.Table;
 import javax.transaction.HeuristicMixedException;
 import javax.transaction.HeuristicRollbackException;
 import javax.transaction.NotSupportedException;
 import javax.transaction.RollbackException;
 import javax.transaction.SystemException;
+import javax.xml.bind.annotation.XmlRootElement;
 
 /**
  *
  * @author kbakytbekov
  */
+
 @Named(value = "authBean")
 @SessionScoped
+@Table(name = "users")
+@XmlRootElement
 public class AuthBean extends BaseBean {
 
     private String username;
@@ -55,15 +61,15 @@ public class AuthBean extends BaseBean {
                         manager = true;
                     }
                     
-                    FacesContext.getCurrentInstance().getExternalContext().getSessionMap().put("user", user);//session
+                    FacesContext.getCurrentInstance().getExternalContext().getSessionMap().put("login", user);//session
                     
-                    String username = ((Users) FacesContext.getCurrentInstance().getExternalContext().getSessionMap().get("user")).getLogin();
+                    String username = ((Users) FacesContext.getCurrentInstance().getExternalContext().getSessionMap().get("login")).getLogin();
                    
                     userTransaction.begin();
                   
                     userTransaction.commit();
                     System.out.println("redirect");
-                    redirect("/view/rating.xhtml");
+                    redirect("/view/index.xhtml");
                 }
             } catch (javax.persistence.NoResultException e) {
                 context.addMessage(null, new FacesMessage("Внимание", "Такого пользователя не существует. Проверьте пароль и логин"));
@@ -156,7 +162,7 @@ public class AuthBean extends BaseBean {
     }
 
     public void redirectToRating() {
-        redirect("/view/rating.xhtml");
+        redirect("/view/index.xhtml");
     }
 
     public boolean isAdmin() {
