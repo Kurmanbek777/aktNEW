@@ -18,9 +18,9 @@ public class Hashing {
 
 	Map<String, String> DB = new HashMap<String, String>();
 	public static final String SALT = "my-salt-text";
-////////////этот класс по идее не нужен, 
+////////////этот класс по идее не нужен, Будет ли он выполняться и как привзяать к классу Login.java?нужно его имплементировать?
 	public static void main(String args[]) {
-		PasswordHashingDemo demo = new PasswordHashingDemo();
+		Hashing demo = new Hashing();
 		demo.signup("john", "dummy123");
 
 		// login should succeed.
