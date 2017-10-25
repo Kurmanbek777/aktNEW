@@ -64,8 +64,8 @@
                             <f:facet name="header">
                                 <h:outputText value="Действия"/>
                             </f:facet>
-                            <h:commandLink action="#{departmentsController.prepareView}" value="#{bundle.ListDepartmentsViewLink}"/>
-                            <h:outputText value=" "/>
+                         <h:commandLink action="#{departmentsController.prepareView}" value="#{bundle.ListDepartmentsViewLink}"/> 
+                                <h:outputText value=" "/>
                             <h:commandLink action="#{departmentsController.prepareEdit}" value="#{bundle.ListDepartmentsEditLink}"/>
                             <h:outputText value=" "/>
                             <h:commandLink action="#{departmentsController.destroy}" value="#{bundle.ListDepartmentsDestroyLink}"/>
@@ -76,7 +76,7 @@
                 <h:commandLink action="#{departmentsController.prepareCreate}" value="#{bundle.ListDepartmentsCreateLink}"/>
                 <br />
                 <br />
-                <h:link outcome="/index" value="#{bundle.ListDepartmentsIndexLink}"/>
+                <h:link outcome="/admin" value="#{bundle.ListDepartmentsIndexLink}"/>
             </h:form>
         </ui:define>
     </ui:composition>
