@@ -10,12 +10,13 @@ import javax.persistence.metamodel.CollectionAttribute;
 import javax.persistence.metamodel.SingularAttribute;
 import javax.persistence.metamodel.StaticMetamodel;
 
-@Generated(value="EclipseLink-2.5.2.v20140319-rNA", date="2017-09-11T22:04:23")
+@Generated(value="EclipseLink-2.5.2.v20140319-rNA", date="2017-11-06T18:00:34")
 @StaticMetamodel(Users.class)
 public class Users_ { 
 
     public static volatile CollectionAttribute<Users, Employees> employeesCollection;
     public static volatile SingularAttribute<Users, String> password;
+    public static volatile SingularAttribute<Users, String> salt;
     public static volatile CollectionAttribute<Users, Offices> officesCollection;
     public static volatile SingularAttribute<Users, Integer> id;
     public static volatile CollectionAttribute<Users, Departments> departmentsCollection;

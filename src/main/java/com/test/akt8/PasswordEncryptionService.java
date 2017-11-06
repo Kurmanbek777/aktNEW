@@ -22,6 +22,8 @@ public class PasswordEncryptionService {
     private static final int ITERATIONS = 10000;
     private static final int KEY_LENGTH = 1024;
 
+    
+    //метод получения хешированного пароля
     public static String hashPassword(String password, String salt) {
         char[] passwordChars = password.toCharArray();
         byte[] saltBytes = salt.getBytes();
@@ -40,6 +42,7 @@ public class PasswordEncryptionService {
         return toHex(hashedPassword);
     }
 
+//Генерация соли
     public static String generateSalt() {
         byte[] salt = new byte[32];
         try {
@@ -51,6 +54,7 @@ public class PasswordEncryptionService {
         return toHex(salt);
     }
 
+    
     private static String toHex(byte[] array) {
         BigInteger bi = new BigInteger(1, array);
         String hex = bi.toString(16);

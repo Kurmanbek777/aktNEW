@@ -22,7 +22,6 @@ com\test\akt8\OfficesController$OfficesControllerConverter.class
 com\test\akt8\Offices_.class
 com\test\akt8\TransferController$TransferControllerConverter.class
 com\test\akt8\util\JsfUtil.class
-com\test\akt8\BaseBean.class
 com\test\akt8\Inventoryhelper_.class
 com\test\akt8\DepartmentsController$1.class
 com\test\akt8\DepartmentsController$DepartmentsControllerConverter.class
@@ -34,17 +33,13 @@ com\test\akt8\InventoryhelperController$InventoryhelperControllerConverter.class
 com\test\akt8\Transfer.class
 com\test\akt8\TransferFacade.class
 net\proselyte\springsecurityapp\model\Role_.class
-com\test\akt8\Users_.class
-com\test\akt8\AuthBean.class
 com\test\akt8\Employees.class
 com\test\akt8\InventoryhelperController$1.class
 com\journaldev\jsf\filter\AuthorizationFilter.class
 com\test\akt8\EmployeesFacade.class
-com\test\akt8\Users.class
 com\test\akt8\Inventoryhelper.class
 com\test\akt8\OfficesController$1.class
 com\test\akt8\Transfer_.class
-com\test\akt8\Password.class
 net\proselyte\springsecurityapp\model\User_.class
 com\journaldev\jsf\beans\Login.class
 com\test\akt8\UsersController$UsersControllerConverter.class

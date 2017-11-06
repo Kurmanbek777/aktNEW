@@ -6,7 +6,7 @@ import javax.persistence.metamodel.SingularAttribute;
 import javax.persistence.metamodel.StaticMetamodel;
 import net.proselyte.springsecurityapp.model.User;
 
-@Generated(value="EclipseLink-2.5.2.v20140319-rNA", date="2017-09-11T22:04:23")
+@Generated(value="EclipseLink-2.5.2.v20140319-rNA", date="2017-11-06T18:00:34")
 @StaticMetamodel(Role.class)
 public class Role_ { 
 

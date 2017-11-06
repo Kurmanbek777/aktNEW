@@ -5,6 +5,10 @@
  */
 package com.test.akt8;
 
+import static com.test.akt8.PasswordEncryptionService.hashPassword;
+
+import static com.test.akt8.Users_.password;
+import static com.test.akt8.Users_.salt;
 import java.io.Serializable;
 import java.util.Collection;
 import javax.faces.application.FacesMessage;
@@ -25,6 +29,8 @@ import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlTransient;
+import static net.proselyte.springsecurityapp.model.User_.password;
+
 
 /**
  *
@@ -37,7 +43,8 @@ import javax.xml.bind.annotation.XmlTransient;
     @NamedQuery(name = "Users.findAll", query = "SELECT u FROM Users u")
     , @NamedQuery(name = "Users.findById", query = "SELECT u FROM Users u WHERE u.id = :id")
     , @NamedQuery(name = "Users.findByLogin", query = "SELECT u FROM Users u WHERE u.login = :login")
-    , @NamedQuery(name = "Users.findByPassword", query = "SELECT u FROM Users u WHERE u.password = :password")})
+    , @NamedQuery(name = "Users.findByPassword", query = "SELECT u FROM Users u WHERE u.password = :password")
+    , @NamedQuery(name = "Users.findBySalt", query = "SELECT u FROM Users u WHERE u.salt = :salt")})
 public class Users implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -56,6 +63,8 @@ public class Users implements Serializable {
     @Size(min = 1, max = 100)
     @Column(name = "password")
     private String password;
+    @Column(name = "salt")
+    private String salt;
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "userid")
     private Collection<Transfer> transferCollection;
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "userid")
@@ -74,10 +83,15 @@ public class Users implements Serializable {
         this.id = id;
     }
 
-    public Users(Integer id, String login, String password) {
+    public Users(Integer id, String login, String password, String salt) {
         this.id = id;
         this.login = login;
         this.password = password;
+        this.salt = salt;
+        
+    PasswordEncryptionService hashing; //
+        hashing = new PasswordEncryptionService(); // 
+    PasswordEncryptionService.hashPassword(password, salt); //
     }
 
     public Integer getId() {
@@ -96,14 +110,26 @@ public class Users implements Serializable {
         this.login = login;
     }
 
+    
+    
+    
     public String getPassword() {
-        return password;
+        
+       return password;
     }
 
     public void setPassword(String password) {
+       
         this.password = password;
     }
+ public String getSalt() {
+        return salt;
+    }
 
+    public void setSalt(String salt) {
+        this.salt = salt;
+    }
+    
     @XmlTransient
     public Collection<Transfer> getTransferCollection() {
         return transferCollection;
@@ -175,7 +201,5 @@ public class Users implements Serializable {
     }
    
 
-
-	
     
 }
