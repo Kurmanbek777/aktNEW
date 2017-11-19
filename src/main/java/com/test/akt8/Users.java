@@ -83,15 +83,17 @@ public class Users implements Serializable {
         this.id = id;
     }
 
-    public Users(Integer id, String login, String password, String salt) {
+    public Users  (Integer id, String login, String password, String salt) {
         this.id = id;
         this.login = login;
         this.password = password;
         this.salt = salt;
         
-    PasswordEncryptionService hashing; //
-        hashing = new PasswordEncryptionService(); // 
-    PasswordEncryptionService.hashPassword(password, salt); //
+    PasswordEncryptionService hashing; // вызов метода
+        hashing = new PasswordEncryptionService(); // вызов метода
+    PasswordEncryptionService.hashPassword(password, salt); //вызов метода
+     salt=PasswordEncryptionService.generateSalt();
+     System.out.println ("salt" + salt);
     }
 
     public Integer getId() {
