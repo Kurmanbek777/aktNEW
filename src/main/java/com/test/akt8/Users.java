@@ -112,7 +112,9 @@ public class Users implements Serializable {
         this.login = login;
     }
 
-    
+    //  public static void main(String[] args) { 
+      //  System.out.println("Wrong"); 
+    //} 
     
     
     public String getPassword() {
