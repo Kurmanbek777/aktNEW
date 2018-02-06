@@ -7,8 +7,8 @@ package com.test.akt8;
 
 import static com.test.akt8.PasswordEncryptionService.hashPassword;
 
-import static com.test.akt8.Users_.password;
-import static com.test.akt8.Users_.salt;
+
+
 import java.io.Serializable;
 import java.util.Collection;
 import javax.faces.application.FacesMessage;
@@ -47,7 +47,7 @@ import java.util.*;
     , @NamedQuery(name = "Users.findByLogin", query = "SELECT u FROM Users u WHERE u.login = :login")
     , @NamedQuery(name = "Users.findByPassword", query = "SELECT u FROM Users u WHERE u.password = :password")
     , @NamedQuery(name = "Users.findBySalt", query = "SELECT u FROM Users u WHERE u.salt = :salt")})
-public class Users implements Serializable {
+public class Users extends PasswordEncryptionService implements Serializable {
 
     private static final long serialVersionUID = 1L;
     @Id
@@ -91,10 +91,13 @@ public class Users implements Serializable {
         this.password = password;
         this.salt = salt;
         
-    PasswordEncryptionService hashing; // вызов метода
-        hashing = new PasswordEncryptionService(); // вызов метода
-    PasswordEncryptionService.hashPassword(password, salt); //вызов метода
-     salt=PasswordEncryptionService.generateSalt();
+    //PasswordEncryptionService hashing; // не правильно
+      //  hashing = new PasswordEncryptionService(); // не правильно
+    //PasswordEncryptionService.hashPassword(password, salt); //вызов метода
+    //PasswordEncryptionService hashing = new PasswordEncryptionService();
+  //  hashing.toHex(hashedPassword) =password;
+    password=PasswordEncryptionService.hashPassword(password, salt);
+    salt=PasswordEncryptionService.generateSalt();
      System.out.println ("salt" + salt);
     }
 

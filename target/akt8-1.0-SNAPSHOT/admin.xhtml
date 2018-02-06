@@ -2,15 +2,26 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
-	xmlns:h="http://java.sun.com/jsf/html">
+	xmlns:h="http://java.sun.com/jsf/html"
+            
+        xmlns:f="http://xmlns.jcp.org/jsf/core">
 <h:head>
 	<title>Facelet Title</title>
 </h:head>
 <h:body>
 	<h:form>
 		<p>Welcome #{login.user}</p>
-		<h:commandLink action="#{login.logout}" value="Logout"></h:commandLink>
+		<h:commandLink action="#{login.logout}" value="Выход"></h:commandLink>
                  <br />
+                 <br />
+                 <p align="center"> <h:graphicImage value="/resources/img/images.png" /></p>
+                  <br/>
+                  
+                 <p><span style="color: blue; font-size: 3em; align-content: center"> Система передачи оборудования в ГП Инфоком </span></p>
+                 
+                
+                   
+                 
         <br />
                 <input type="button" value="Интерфейс Отделов" onclick="javascript:window.location='/akt8/faces/departments/List.xhtml'" style="width:75%;height:75px;font-size:30px"/>
         <br />
@@ -52,6 +63,6 @@
         <br />
         <br />
         <br />
-	</h:form>
+       </h:form>
 </h:body>
 </html>

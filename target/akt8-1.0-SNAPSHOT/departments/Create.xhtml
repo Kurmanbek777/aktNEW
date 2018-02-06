@@ -30,13 +30,16 @@
                 <br />
                 
                 
-                <h:commandLink action="#{departmentsController.create}" value="#{bundle.CreateDepartmentsSaveLink}" />
+                  <h:commandLink action="#{departmentsController.create}" value="#{bundle.CreateDepartmentsSaveLink}" /> 
+              
+                
                 <br />
                 <br />
-                <h:commandLink action="#{departmentsController.prepareList}" value="#{bundle.CreateDepartmentsShowAllLink}" immediate="true"/>
+                 <h:commandLink action="#{departmentsController.prepareList}" value="#{bundle.CreateDepartmentsShowAllLink}" immediate="true"/> 
+                
                 <br />
                 <br />
-                <h:link outcome="/index" value="#{bundle.CreateDepartmentsIndexLink}"/>
+                <h:link outcome="/admin" value="#{bundle.CreateDepartmentsIndexLink}"/>
             </h:form>
         </ui:define>
     </ui:composition>
