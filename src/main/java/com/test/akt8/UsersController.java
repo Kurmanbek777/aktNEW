@@ -27,6 +27,8 @@ public class UsersController implements Serializable {
     private PaginationHelper pagination;
     private int selectedItemIndex;
 
+    private String password;
+    
     public UsersController() {
     }
 
@@ -79,6 +81,9 @@ public class UsersController implements Serializable {
 
     public String create() {
         try {
+            String salt=PasswordEncryptionService.generateSalt();
+            current.setSalt(salt);
+            current.setPassword(PasswordEncryptionService.hashPassword(password, salt));
             getFacade().create(current);
             JsfUtil.addSuccessMessage(ResourceBundle.getBundle("/Bundle").getString("UsersCreated"));
             return prepareCreate();
@@ -87,6 +92,7 @@ public class UsersController implements Serializable {
             return null;
         }
     }
+    
 
     public String prepareEdit() {
         current = (Users) getItems().getRowData();
@@ -228,6 +234,14 @@ public class UsersController implements Serializable {
             }
         }
 
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
     }
 
 }

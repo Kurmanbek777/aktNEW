@@ -62,7 +62,7 @@ public class Users extends PasswordEncryptionService implements Serializable {
     private String login;
     @Basic(optional = false)
     @NotNull
-    @Size(min = 1, max = 100)
+    @Size(min = 1, max = 500)
     @Column(name = "password")
     private String password;
     @Column(name = "salt")
